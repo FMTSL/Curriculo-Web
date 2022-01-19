@@ -1,0 +1,48 @@
+<div class="form-container mat-elevation-z5">
+  <h1>Cadastre um novo usuário!</h1>
+  <form [formGroup]="signUpForm" (ngSubmit)="submit()">
+    <mat-form-field>
+      <input matInput placeholder="Nome" formControlName="name" />
+      <mat-error *ngIf="name?.errors?.['required']">
+        O nome é obrigatório
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="E-mail" formControlName="email" />
+      <mat-error *ngIf="email?.errors?.['required']">
+        É necessário um endereço de e-mail
+      </mat-error>
+      <mat-error *ngIf="email?.errors?.['email']">
+        Digite um e-mail Válido!
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        type="password"
+        placeholder="Senha"
+        formControlName="password"
+        />
+      <mat-error *ngIf="password?.errors?.['required']">
+        Por Favor, Digite uma Senha!
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        type="password"
+        placeholder="Confirme a Senha"
+        formControlName="confirmPassword"
+      />
+      <mat-error *ngIf="confirmPassword?.errors?.['required']">
+        Por Favor, Confirmar a Senha!
+      </mat-error>
+    </mat-form-field>
+    <mat-error *ngIf="signUpForm.errors?.['passwordsDontMatch']">
+      As senhas não são Iguais!
+    </mat-error>
+    <div class="center margin-top">
+      <button type="submit" mat-raised-button color="primary">Cadastre-Se!</button>
+    </div>
+  </form>
+</div>
