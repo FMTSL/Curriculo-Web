@@ -16,3 +16,5 @@ A leitura dos dados pode ser via REST ou Lib do firebase, como achar melhor.
 Caprichar na documentação no git e layout.
 Linguagem: Angular 13
 Framework: não obrigatório, mas de preferência PrimeNG (https://primefaces.org/primeng/showcase/#/)
+
+E-mail utilizado para Authentication no Firebase: FML2704@GMAIL.COM
